@@ -1,23 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/16 20:22:09 by iortego-          #+#    #+#             */
+/*   Updated: 2022/06/16 20:22:09 by iortego-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "libft.h"
 
 int	ft_memcmp(const void	*s1, const void	*s2, size_t	n)
 {
 	int	count;
-	int	ret;
 	unsigned char *ptr;
 	unsigned char *pun;
 
-	ret = 0;
 	ptr = (unsigned char *)s2;
 	pun = (unsigned char *)s1;
 	count = 0;
-	while (count < n - 1 && ret == 0)
-	{
-		if (pun[count] != ptr[count])
-			if (pun[count + 1] != ptr[count + 1])
-			{
-				ret = (pun[count] + pun[count + 1]);
-			}	ret = (ptr[count] + ptr[count + 1]);
+	while (count < n && pun[count] != ptr[count])
 		count++;
-	}
+	return (pun[count] - ptr[count]);
 }
