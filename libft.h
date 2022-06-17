@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2022/06/17 20:41:48 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:50:08 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ void	ft_tolower();
 void	ft_toupper();
 //--MIS FUNCIONES--
 int		ft_isspace(char	c);
+
 #endif
