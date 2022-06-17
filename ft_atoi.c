@@ -21,9 +21,9 @@ int	ft_atoi(char	*c)
 	sing = 1;
 	while (ft_isspace(*c))
 		c++;
-	if (c == '-')
+	if (*c == '-')
 		sing *= -1;
 	while (ft_isdigit(*c))
-		ret = 10 * ret + c++ - '0';
+		ret = 10 * ret + *(c++) - '0';
 	return (ret * sing);
 }

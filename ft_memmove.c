@@ -11,17 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
-void	*ft_memmove(void	*dst, const void	*src, size_t	len)
+void	*ft_memmove(void	*dest, const void	*src, size_t	len)
 {
 	size_t	count;
-
+	void	*ptr;
+	int	a;
+// hay que mirar como castear punteros y repasar los voids
+	ptr = dest;
 	count = 0;
-	while (scr + count != dest)
+	while (src + count != ptr)
 		count++;
-	if (scr + count == dest)
-		return dest;
+	if (src + count == ptr)
+		return (ptr);
 	while (0 < len--)
-		dest[len] = src[len];
-	return (dest);
+		(long int)ptr[len] = src[len];
+	return (ptr);
 }
