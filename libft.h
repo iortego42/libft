@@ -38,7 +38,9 @@ void	ft_strnstr();
 void	ft_strrchr();
 void	ft_tolower();
 void	ft_toupper();
+
 //--MIS FUNCIONES--
+
 int		ft_isspace(char	c);
 
 #endif
