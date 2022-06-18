@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2022/06/17 20:50:08 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/06/18 20:25:44 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_atoi(char	*str);
 void	ft_bzero();
 void	*ft_calloc(size_t	count, size_t	size);
 void	*ft_memchr(const void	*s, int	c, size_t	n);
-void	ft_memcmp();
+int     ft_memcmp(const void    *s1, const void *s2, size_t     n);
 void	ft_memcpy();
 void	*ft_memmove(void	*dest, const void	*src, size_t	len);
 void	*ft_memset(void	*b, int	c, size_t len);
@@ -39,7 +39,7 @@ void	ft_strrchr();
 void	ft_tolower();
 void	ft_toupper();
 
-//--MIS FUNCIONES--
+/*--MIS FUNCIONES--*/
 
 int		ft_isspace(char	c);
 
