@@ -15,12 +15,12 @@
 
 #include <stdlib.h>
 
-int		ft_isalpha(char	c);
-int		ft_isdigit(char	c);
-int		ft_isalnum(char	c);
-int		ft_isascii(char	c);
-int		ft_isprint(char	c);
-int		ft_atoi(char	*str);
+int	ft_isalpha(char	c);
+int	ft_isdigit(char	c);
+int	ft_isalnum(char	c);
+int	ft_isascii(char	c);
+int	ft_isprint(char	c);
+int	ft_atoi(char	*str);
 void	ft_bzero();
 void	*ft_calloc(size_t	count, size_t	size);
 void	*ft_memchr(const void	*s, int	c, size_t	n);
@@ -36,8 +36,8 @@ void	ft_strlen();
 void	ft_strncmp();
 void	ft_strnstr();
 void	ft_strrchr();
-void	ft_tolower();
-void	ft_toupper();
+int	ft_tolower(int	c);
+int	ft_toupper(int	c);
 
 /*--MIS FUNCIONES--*/
 
