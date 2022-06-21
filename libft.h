@@ -32,10 +32,10 @@ void	ft_strchtr();
 void	ft_strdutp();
 void	ft_strlcat();
 void	ft_strlcpy();
-void	ft_strlen();
+size_t	ft_strlen(const char	*s);
 void	ft_strncmp();
 void	ft_strnstr();
-void	ft_strrchr();
+void	ft_strchr(const char	*s, int	c);
 int	ft_tolower(int	c);
 int	ft_toupper(int	c);
 
