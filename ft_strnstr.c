@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char *ft_strnstr(const char	*haystack, const char	*needle, size_t	len)
+{
+	size_t	count;
+
+	while (*haystack != 0 && len-- > 0)
+		if (*haystack++ == *needle || *needle == 0)
+		{
+			count = 0;
+			while (*(haystack++ - 1) == *(needle + count))
+				count++;
+			if (*(needle + count) == 0)
+				return ((char	*)haystack);
+		}
+	return (NULL);
+}
