@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:22:10 by iortego-          #+#    #+#             */
-/*   Updated: 2022/06/27 13:40:03 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:10:49 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ size_t ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
 			dst[dstlen + count - 1] = *(src + count - 1);
 		dst[dstlen + count] = 0;
 	}
+	else
+		dstlen = 0;
 	return (dstlen + ft_strlen(src));
 }
