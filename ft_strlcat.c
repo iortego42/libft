@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:22:10 by iortego-          #+#    #+#             */
-/*   Updated: 2022/06/28 20:10:49 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/06/29 11:40:51 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
 		;
 	if (dstlen < dstsize)
 	{
-		while (*(src + count) != 0 && dstlen + count++ < dstsize)
+		while (*(src + count) != 0 && dstlen + count < dstsize && ++count)
 			dst[dstlen + count - 1] = *(src + count - 1);
 		dst[dstlen + count] = 0;
 	}
