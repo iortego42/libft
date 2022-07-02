@@ -6,45 +6,12 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 11:49:43 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/02 14:12:17 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:50:29 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_how_many_word(char const	*s, char	sentinel)
-{
-	int	count;
-
-	count = 0;
-	while (*(s) != 0)
-		if (*(s++) != sentinel && (*s == sentinel || *s == 0))
-			count++;
-	return (count);
-}
-int	ft_how_many_char(char const *s, char	 sentinel)
-{
-	int	count;
-
-	count = 0;
-	while (*s != sentinel && *(s++) != 0)
-		count++;
-	return (count);
-}
- 
-void	ft_all_free(void	*matrix, int	dimension, long long int	*count)
-{
-	int	free_count;
-
-	while (dimension-- > 0)
-	{
-		if (dimension != 1)
-			ft_all_free(*matrix, dimension, count);
-		free_count = 0;
-		while (count[dimension] > free_count)
-			free(matrix + free_count++);
-	}	
-}
 char	**ft_split(char const	*s, char	c)
 {
 	char	**list;

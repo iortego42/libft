@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2022/06/30 12:42:10 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:48:44 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	ft_putnbr_fd(int	a, int fd);
 /*--MIS FUNCIONES--*/
 
 int		ft_isspace(char	c);
-int		ft_how_many_wor(char const	*s, char	centinel);
+int		ft_how_many_word(char const	*s, char	centinel);
 int		ft_how_many_char(char const	*s, char	centinel);
+void	ft_matrix_free(void	*matrix, int	dimension, long int	*count);
 #endif
