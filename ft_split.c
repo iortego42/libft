@@ -18,7 +18,7 @@ int	ft_how_many_word(char const	*s, char	centinel)
 
 	count = 0;
 	while (*(s) != 0)
-		if (*(s++) != c && (*s == c || *s == 0))
+		if (*(s++) != centinel && (*s == centinel || *s == 0))
 			count++;
 	return (count);
 }
@@ -31,6 +31,11 @@ int	ft_how_many_char(char const *s, char	 centinel)
 		count++;
 	return (count);
 }
+/* En desarrollo, recibe cualquier tipo de matriz y en funcion del numero de dimensiones que tenga la libera entera
+void	ft_all_free(void	ptr, long long int	count[10])
+{
+	
+}*/
 char	**ft_split(char const	*s, char	c)
 {
 	char	**list;
