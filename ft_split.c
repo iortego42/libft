@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 11:49:43 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/03 15:09:57 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/07/03 18:06:07 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	**ft_split(char const	*s, char	c)
 		count = ft_how_many_char(s, c);
 		*(list + words) = ft_calloc(count + 1, sizeof(char));
 		if (*(list + words) == NULL)
-			return (ft_matrix_delete(),NULL);
+			return (ft_matrix_delete(list, 2), NULL);
 		s += count;
 		ft_strlcpy(*(list + words++), s, count + 1);
 	}
