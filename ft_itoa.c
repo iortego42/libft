@@ -6,7 +6,7 @@
 /*   By: iortego- <iortego-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 18:10:25 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/03 18:50:15 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/07/04 19:05:48 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@ char	*ft_itoa(int	n)
 	unsigned int	sign;
 	int	digits;
 
-	digits = 1;	
-	if (n < 0 && digits++)
-		sign = -1 * n;
+	digits = 0;	
 	sign = n;
-	while (sign > 0)
-	{
-		digits++;
+	if (n < 0 && ++digits)
+		sign = -n;
+	while (sign > 0 && ++digits)
 		sign /= 10;
-	}
 	number = (char	*)ft_calloc(digits + 1, sizeof(char));
 	if (number == NULL)
 		return (NULL);
+	sign = n;
 	if (n < 0)
 		*number = '-';
-	number += digits;
-	while (sign > 0)
+	if (n < 0)
+		sign = -n;
+	number += --digits;
+	while (sign != 0)
 	{	
 		*(number--) = '0' + sign % 10;
 		sign /= 10;

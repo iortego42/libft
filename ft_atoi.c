@@ -6,12 +6,16 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:22:08 by iortego-          #+#    #+#             */
-/*   Updated: 2022/06/29 13:19:34 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/07/04 18:54:31 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_isspace(char	c)
+{
+	return ((unsigned)c - 9 < 4 || c == 32);
+}
 int	ft_atoi(char	*c)
 {
 	int	ret;
