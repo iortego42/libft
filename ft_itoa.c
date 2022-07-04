@@ -15,9 +15,28 @@
 char	*ft_itoa(int	n)
 {
 	char	*number;
-	int		sign;
+	unsigned int	sign;
+	int	digits;
 
-
-	number = ft_calloc(n + 1, sizeof(char));
-	while 
+	digits = 1;	
+	if (n < 0 && digits++)
+		sign = -1 * n;
+	sign = n;
+	while (sign > 0)
+	{
+		digits++;
+		sign /= 10;
+	}
+	number = (char	*)ft_calloc(digits + 1, sizeof(char));
+	if (number == NULL)
+		return (NULL);
+	if (n < 0)
+		*number = '-';
+	number += digits;
+	while (sign > 0)
+	{	
+		*(number--) = '0' + sign % 10;
+		sign /= 10;
+	}
+	return (number);
 }

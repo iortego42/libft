@@ -30,9 +30,9 @@ char	**ft_split(char const	*s, char	c)
 		count = ft_how_many_char(s, c);
 		*(list + words) = ft_calloc(count + 1, sizeof(char));
 		if (*(list + words) == NULL)
-			return (ft_matrix_delete(list, 2), NULL);
+			return (ft_matrix_delete((void	**)list, 2), NULL);
 		s += count;
-		ft_strlcpy(*(list + words++), s, count + 1);
+		ft_strlcpy(*(list + words++), s, count);
 	}
 	return (list);
 }
