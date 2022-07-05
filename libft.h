@@ -14,6 +14,7 @@
 #define LIBFT_H
 
 #include <stdlib.h>
+#include <unistd.h>
 
 int		ft_isalpha(char	c);
 int		ft_isdigit(char	c);
@@ -53,7 +54,6 @@ void	ft_putstr_fd(char	*s, int	fd);
 void	ft_putendl_fd(char	*s, int fd);
 void	ft_putnbr_fd(int	a, int fd);
 /*--MIS FUNCIONES--*/
-void	ft_putnbr(int a);
 /*
 int		ft_isspace(char	c);
 int		ft_how_many_word(char const	*s, char	sentinel);

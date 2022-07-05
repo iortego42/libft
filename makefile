@@ -1,16 +1,18 @@
+NAME: libft.a
+
+CC: clang
+
+CFLAGS: -Wall -Wextra -Werror -std=c89 -pedantic
+
 SRCS:	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
-		ft_how_many_char.c \
-		ft_how_many_word.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
 		ft_isprint.c \
-		ft_isspace.c \
 		ft_itoa.c \
-		ft_matrix_delete.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
@@ -36,3 +38,18 @@ SRCS:	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c
+OBJECTS = $(SRCS:.c=.o)
+all: $(NAME)
+
+$(NAME): $(OBJECTS)
+	ar -rc $(NAME) $(OBJECTS)
+
+clean:
+	rm -f $(OBJECTS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: re clean fclean all bonus 
