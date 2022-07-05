@@ -31,11 +31,6 @@ static int	ft_how_many_word(char const	*s, char	sentinel)
 			count++;
 	return (count);
 }
-static void	ft_matrix_delete(void	**matrix, int	dimension)
-{
-	ft_matrix_free(matrix, dimension);
-	matrix = NULL;
-}
 static void	ft_matrix_free(void	**matrix, int	dimension)
 {
 	int	free_count;
@@ -49,6 +44,11 @@ static void	ft_matrix_free(void	**matrix, int	dimension)
 		while (matrix + free_count != NULL)
 			free(matrix + free_count++);
 	}
+}
+static void	ft_matrix_delete(void	**matrix, int	dimension)
+{
+	ft_matrix_free(matrix, dimension);
+	matrix = NULL;
 }
 char	**ft_split(char const	*s, char	c)
 {

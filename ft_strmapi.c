@@ -15,15 +15,15 @@
 char	*ft_strmapi(char const	*s, char	(*f)(unsigned int, char))
 {
 	char	*newstr;
-	char	*sindex;
+	size_t	sindex;
 
 	if (!s || !f)
 		return (NULL);
-	sindex = (char	*)s;
-	newstr = ft_calloc(ft_strlen(s) + 1, sizeof(char);
-	if (newstr == NULL))
+	sindex = 0;
+	newstr = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (newstr == NULL)
 		return (NULL);
-	while (*sindex != 0)
-		*newstr++ = f(sindex - s, *sindex++);
-	return (newstr);
+	while (*(s + sindex++) != 0)
+		*newstr++ = f(sindex - 1, *(s + sindex  - 1));
+	return (newstr - sindex - 1);
 }
