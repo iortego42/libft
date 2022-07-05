@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/04 18:52:34 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:50:27 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_putstr_fd(char	*s, int	fd);
 void	ft_putendl_fd(char	*s, int fd);
 void	ft_putnbr_fd(int	a, int fd);
 /*--MIS FUNCIONES--*/
+void	ft_putnbr(int a);
 /*
 int		ft_isspace(char	c);
 int		ft_how_many_word(char const	*s, char	sentinel);
