@@ -8,5 +8,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	if (!s && !f)
 		return (NULL);
 	while (*sindex != 0)
-		f(sindex - s, sindex);
+		(*f)(sindex - s, sindex);
 }

@@ -6,7 +6,7 @@
 /*   By: iortego- <iortego-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 19:16:44 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/04 19:16:51 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:04:19 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strmapi(char const	*s, char	(*f)(unsigned int, char))
 	if (newstr == NULL)
 		return (NULL);
 	while (*(s + sindex++) != 0)
-		*newstr++ = f(sindex - 1, *(s + sindex  - 1));
+		*newstr++ = (*f)(sindex - 1, *(s + sindex  - 1));
 	return (newstr - sindex - 1);
 }
