@@ -39,19 +39,19 @@ SRCS:	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
-SRCB:
+SRCB:	ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c
 
 OBJECTS = $(SRCS:.c=.o)
 
-OBJECTSB = $(SRCB:		ft_lstadd_back.c 
-		ft_lstadd_front.c 
-		ft_lstclear.c 
-		ft_lstdelone.c 
-		ft_lstiter.c 
-		ft_lstlast.c 
-		ft_lstmap.c 
-		ft_lstnew.c 
-		ft_lstsize.c$PEPE$PEPE$@.c=.o)
+OBJECTSB = $(SRCB:.c=.o)
 
 all: $(NAME)
 
@@ -59,7 +59,7 @@ bonus:
 	make "OBJECTS=$(OBJECTSB)"
 
 $(NAME): $(OBJECTS)
-	ar -rc $(NAME) $(OBJECTS) 
+	ar -rc $(NAME) $(OBJECTS)
 
 clean:
 	rm -f $(OBJECTS)
@@ -69,4 +69,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re clean fclean all bonus 
+.PHONY: re clean fclean all bonus
