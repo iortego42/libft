@@ -12,12 +12,13 @@
 
 #include "libft.h"
 
-void	ft_matrix_delete(void	**matrix, int	dimension)
+void	ft_matrix_delete(void **matrix, int dimension)
 {
 	ft_matrix_free(matrix, dimension);
 	matrix = NULL;
 }
-void	ft_matrix_free(void	**matrix, int	dimension)
+
+void	ft_matrix_free(void **matrix, int dimension)
 {
 	int	free_count;
 
@@ -25,7 +26,7 @@ void	ft_matrix_free(void	**matrix, int	dimension)
 	while (dimension-- > 0)
 	{	
 		while (*(matrix + free_count) != NULL && dimension > 0)
-			ft_matrix_free(*(matrix + free_count++), dimension);	
+			ft_matrix_free(*(matrix + free_count++), dimension);
 		free_count = 0;
 		while (matrix + free_count != NULL)
 			free(matrix + free_count++);

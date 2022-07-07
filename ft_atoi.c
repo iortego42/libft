@@ -12,11 +12,12 @@
 
 #include "libft.h"
 
-static int	ft_isspace(char	c)
+static int	ft_isspace(char c)
 {
 	return ((unsigned)c - 9 < 4 || c == 32);
 }
-int	ft_atoi(char	*c)
+
+int	ft_atoi(char *c)
 {
 	int	ret;
 	int	sing;

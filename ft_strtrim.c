@@ -21,18 +21,18 @@ char	*ft_strtrim(char const	*s1, char const	*set)
 
 	trim_len = ft_strlen(s1);
 	set_len = ft_strlen(set);
-	src = (char	*)s1;
+	src = (char *)s1;
 	while (*src != 0)
 		if (ft_strnstr(src, set, set_len) == src && src++)
 			trim_len -= set_len;
-	src = (char	*)s1;
+	src = (char *)s1;
 	trim = ft_calloc(trim_len + 1, sizeof(char));
 	while (*src != 0)
 	{
 		if (ft_strnstr(src, set, set_len) == src)
 			src += set_len;
 		else
-			*(trim++) = *(src++); 
+			*(trim++) = *(src++);
 	}
 	return (trim - --trim_len);
 }

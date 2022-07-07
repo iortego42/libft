@@ -12,19 +12,19 @@
 
 #include "libft.h" 
 
-char	*ft_itoa(int	n)
+char	*ft_itoa(int n)
 {
-	char	*number;
+	char			*number;
 	unsigned int	sign;
-	int	digits;
+	int				digits;
 
-	digits = 0;	
+	digits = 0;
 	sign = n;
 	if (n < 0 && ++digits)
 		sign = -n;
 	while (sign > 0 && ++digits)
 		sign /= 10;
-	number = (char	*)ft_calloc(digits + 1, sizeof(char));
+	number = (char *)ft_calloc(digits + 1, sizeof(char));
 	if (number == NULL)
 		return (NULL);
 	sign = n;

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strmapi(char const	*s, char	(*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*newstr;
 	size_t	sindex;
@@ -24,6 +24,6 @@ char	*ft_strmapi(char const	*s, char	(*f)(unsigned int, char))
 	if (newstr == NULL)
 		return (NULL);
 	while (*(s + sindex++) != 0)
-		*newstr++ = (*f)(sindex - 1, *(s + sindex  - 1));
+		*newstr++ = (*f)(sindex - 1, *(s + sindex - 1));
 	return (newstr - sindex - 1);
 }

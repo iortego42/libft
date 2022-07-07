@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_how_many_char(char const *s, char	 sentinel)
+int	ft_how_many_char(char const *s, char sentinel)
 {
 	int	count;
 
