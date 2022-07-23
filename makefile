@@ -1,10 +1,10 @@
-NAME: libft.a
+NAME= libft.a
 
-CC: clang
+CC= clang
 
-CFLAGS: -Wall -Wextra -Werror -std=c89 -pedantic
+#CFLAGS= -Wall -Wextra -Werror -std=c89
 
-SRCS:	ft_atoi.c \
+SRCS=	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -39,7 +39,7 @@ SRCS:	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
-SRCB:	ft_lstadd_back.c \
+SRCB=	ft_lstadd_back.c \
 	ft_lstadd_front.c \
 	ft_lstclear.c \
 	ft_lstdelone.c \

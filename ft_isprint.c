@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-int	ft_isalpha(char c)
+int	ft_isprint(char c)
 {
-	return ((unsigned) c  - 33 < 94);
+	return ((unsigned) c - 32 < 95);
 }

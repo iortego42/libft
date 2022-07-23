@@ -16,23 +16,25 @@ char	*ft_strtrim(char const	*s1, char const	*set)
 {
 	char	*trim;
 	char	*src;
+	char	*setm;
 	size_t	trim_len;
-	size_t	set_len;
 
 	trim_len = ft_strlen(s1);
-	set_len = ft_strlen(set);
+	setm = (char *)set;
 	src = (char *)s1;
 	while (*src != 0)
-		if (ft_strnstr(src, set, set_len) == src && src++)
-			trim_len -= set_len;
+	{
+		setm = (char *)set;
+		while ((*setm && *(setm++) != *src) || (!trim_len-- && src++))
+			;
+	}
 	src = (char *)s1;
 	trim = ft_calloc(trim_len + 1, sizeof(char));
 	while (*src != 0)
 	{
-		if (ft_strnstr(src, set, set_len) == src)
-			src += set_len;
-		else
-			*(trim++) = *(src++);
+		while ((*setm && *(setm++) != *src))
+			;
+		*(trim++) = *(src++);
 	}
 	return (trim - --trim_len);
 }
