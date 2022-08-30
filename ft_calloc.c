@@ -20,7 +20,6 @@ void	*ft_calloc(size_t count, size_t size)
 	c = 0;
 	ptr = malloc(count * size);
 	if (ptr != NULL)
-		while (c++ < count)
-			((unsigned char *)ptr)[c - 1] = 0;
+		ft_bzero(ptr, size * count);
 	return (ptr);
 }

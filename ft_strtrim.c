@@ -15,26 +15,15 @@
 char	*ft_strtrim(char const	*s1, char const	*set)
 {
 	char	*trim;
-	char	*src;
-	char	*setm;
-	size_t	trim_len;
+	
+	size_t	len;
 
-	trim_len = ft_strlen(s1);
-	setm = (char *)set;
-	src = (char *)s1;
-	while (*src != 0)
-	{
-		setm = (char *)set;
-		while ((*setm && *(setm++) != *src) || (!trim_len-- && src++))
-			;
-	}
-	src = (char *)s1;
-	trim = ft_calloc(trim_len + 1, sizeof(char));
-	while (*src != 0)
-	{
-		while ((*setm && *(setm++) != *src))
-			;
-		*(trim++) = *(src++);
-	}
-	return (trim - --trim_len);
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 != 0 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1) - 1;
+	while (s1[len] != 0 && ft_strchr(set, s1[len]))
+		len--;
+	return (ft_substr(s1, 0, len + 1));
 }

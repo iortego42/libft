@@ -20,7 +20,7 @@ char	*ft_itoa(int n)
 
 	digits = 0;
 	sign = n;
-	if (n < 0 && ++digits)
+	if (n <= 0 && ++digits)
 		sign = -n;
 	while (sign > 0 && ++digits)
 		sign /= 10;
@@ -29,13 +29,12 @@ char	*ft_itoa(int n)
 		return (NULL);
 	sign = n;
 	if (n < 0)
-		*number = '-';
+		*(number) = '-';
 	if (n < 0)
 		sign = -n;
-	number += --digits;
-	while (sign != 0)
-	{	
-		*(number--) = '0' + sign % 10;
+	while (digits-- > 0 && number[digits] != '-')
+	{
+		number[digits] = '0' + sign % 10;
 		sign /= 10;
 	}
 	return (number);

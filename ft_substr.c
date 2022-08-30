@@ -16,9 +16,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 
-	substr = ft_calloc(len + 1, sizeof(char));
-	while (*(s++) != (char)start)
-		;
-	ft_strlcpy(substr, --s, len);
+	if (!s)
+		return (NULL);
+	if (*s == 0 || start >= ft_strlen(s))
+		return (ft_strdup(""));
+	substr = (char *)ft_calloc(len + 1, sizeof(char));
+	while (start-- > 0)
+		s++;
+	if (substr != NULL)
+		ft_strlcpy(substr, s, len + 1);
 	return (substr);
 }

@@ -14,21 +14,25 @@
 
 static int	ft_isspace(char c)
 {
-	return ((unsigned)c - 9 < 4 || c == 32);
+	return ((unsigned)c - 9 < 5 || c == 32);
 }
 
 int	ft_atoi(char *c)
 {
-	int	ret;
+	long int	ret;
 	int	sing;
 
 	ret = 0;
 	sing = 1;
 	while (ft_isspace(*c))
 		c++;
-	if (*c == '-')
-		sing *= -1;
+	while (*c == '-' || *c == '+')
+	{
+		if (*c == '-')
+			sing *= -1;
+		c++;
+	}
 	while (ft_isdigit(*c))
-		ret = 10 * ret + *(c++) - '0';
+		ret = (10 * ret) + *(c++) - '0';
 	return (ret * sing);
 }

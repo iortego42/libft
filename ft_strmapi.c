@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	newstr = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (newstr == NULL)
 		return (NULL);
-	while (*(s + sindex++) != 0)
-		*newstr++ = (*f)(sindex - 1, *(s + sindex - 1));
-	return (newstr - sindex - 1);
+	while (*(s + sindex) != 0)
+		*(newstr++) = (*f)(sindex, *(s + sindex++));
+	return (newstr - sindex);
 }

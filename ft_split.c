@@ -27,6 +27,8 @@ static int	ft_how_many_word(char const *s, char sentinel)
 	int	count;
 
 	count = 0;
+	if (!s)
+		return (0);
 	while (*(s) != 0)
 		if (*(s++) != sentinel && (*s == sentinel || *s == 0))
 			count++;
@@ -55,26 +57,58 @@ static void	ft_matrix_delete(void **matrix, int dimension)
 }
 
 char	**ft_split(char const *s, char c)
+// {
+// 	char	**list;
+// 	int		words;
+// 	int		count;
+
+// 	count = 0;
+// 	words = 0;
+// 	list = ft_calloc(ft_how_many_word(s, c) + 1, sizeof(char *));
+// 	if (list == NULL)
+// 		return (NULL);
+// 	while (s != 0)
+// 	{	
+// 		while (*s == c)
+// 			s++;
+// 		count = ft_how_many_char(s, c);
+// 		*(list + words) = ft_calloc(count + 1, sizeof(char));
+// 		if (*(list + words) == NULL)
+// 			return (ft_matrix_delete((void **)list, 2), NULL);
+// 		s += count;
+// 		ft_strlcpy(*(list + words++), s, count);
+// 	}
+// 	return (list);
+// }
 {
 	char	**list;
 	int		words;
-	int		count;
+	int		n;
 
-	count = 0;
-	words = 0;
-	list = ft_calloc(ft_how_many_word(s, c) + 1, sizeof(char *));
-	if (list == NULL)
+	words = ft_how_many_word(s, c);
+	n = 0;
+	list = (char **)ft_calloc(words + 1, sizeof(char *));
+	if (!list)
 		return (NULL);
-	while (s != 0)
-	{	
+	while (words > n)
+	{
 		while (*s == c)
 			s++;
-		count = ft_how_many_char(s, c);
-		*(list + words) = ft_calloc(count + 1, sizeof(char));
-		if (*(list + words) == NULL)
-			return (ft_matrix_delete((void **)list, 2), NULL);
-		s += count;
-		ft_strlcpy(*(list + words++), s, count);
+		// list[n] = ft_substr(s, 0, ft_how_many_char(s, c));
+		// if (list[n] == NULL)
+		// {
+		// 	ft_matrix_delete((void **)list, 2);
+		// 	return (NULL);
+		// }
+		list[n] = (char *)ft_calloc(ft_how_many_char(s, c) + 1, sizeof(char)); 	
+		if (list[n] == 	NULL)
+		{
+			ft_matrix_delete((void **)list, 2);
+			return (NULL);
+		}
+		ft_strlcpy(list[n], s, ft_how_many_char(s, c) + 1);
+		s = ft_strchr(s, c);
+		n++;
 	}
 	return (list);
 }
