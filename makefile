@@ -2,7 +2,7 @@ NAME= libft.a
 
 CC= clang
 
-#CFLAGS= -Wall -Wextra -Werror -std=c89
+CFLAGS= -Wall -Wextra -Werror -std=c89
 
 SRCS=	ft_atoi.c \
 		ft_bzero.c \

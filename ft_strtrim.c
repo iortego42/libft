@@ -13,9 +13,7 @@
 #include "libft.h"
 
 char	*ft_strtrim(char const	*s1, char const	*set)
-{
-	char	*trim;
-	
+{	
 	size_t	len;
 
 	if (!s1 || !set)

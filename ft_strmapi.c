@@ -24,6 +24,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (newstr == NULL)
 		return (NULL);
 	while (*(s + sindex) != 0)
-		*(newstr++) = (*f)(sindex, *(s + sindex++));
+	{
+		*(newstr++) = (*f)(sindex, *(s + sindex));
+		sindex++;
+	}
 	return (newstr - sindex);
 }
