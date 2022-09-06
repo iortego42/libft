@@ -26,12 +26,10 @@ int	ft_atoi(const char *c)
 	sing = 1;
 	while (ft_isspace(*c))
 		c++;
-	while (*c == '-' || *c == '+')
-	{
-		if (*c == '-')
-			sing *= -1;
+	if (*c == '-')
+		sing = -1;		
+	if (*c == '+' || *c == '-')
 		c++;
-	}
 	while (ft_isdigit(*c))
 		ret = (10 * ret) + *(c++) - '0';
 	return (ret * sing);
