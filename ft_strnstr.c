@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:22:10 by iortego-          #+#    #+#             */
-/*   Updated: 2022/06/29 13:34:09 by iortego-         ###   ########.fr       */
+/*   Updated: 2022/09/06 19:54:24 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len)
 {
 	size_t	nlen;
 	size_t	count;
-	
+
 	nlen = ft_strlen(needle);
 	while (*haystack != 0 && len-- >= nlen)
 	{
