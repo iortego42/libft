@@ -20,14 +20,14 @@ static int	ft_isspace(char c)
 int	ft_atoi(const char *c)
 {
 	long int	ret;
-	int	sing;
+	int			sing;
 
 	ret = 0;
 	sing = 1;
 	while (ft_isspace(*c))
 		c++;
 	if (*c == '-')
-		sing = -1;		
+		sing = -1;
 	if (*c == '+' || *c == '-')
 		c++;
 	while (ft_isdigit(*c))

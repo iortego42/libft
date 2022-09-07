@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#define CAST unsigned char
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (n-- > 0 && (*s1 || *s2) && *((CAST *)s1++) == *((CAST *)s2++))
+	while (n-- > 0 && (*s1 || *s2) && *((UC *)s1++) == *((UC *)s2++))
 		;
-	return ((CAST)*(s1 - 1) - (CAST)*(s2 - 1));
+	return ((UC) *(s1 - 1) - (UC) *(s2 - 1));
 }
