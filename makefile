@@ -55,18 +55,20 @@ OBJECTSB = $(SRCB:.c=.o)
 
 all: $(NAME)
 
+mandatory: 
+	make "OBJECTS=$(OBJECTS)"
 bonus:
 	make "OBJECTS=$(OBJECTSB)"
 
-$(NAME): $(OBJECTS)
-	ar -rc $(NAME) $(OBJECTS)
+$(NAME): $(OBJECTS) $(OBJECTSB)
+	ar -rc $(NAME) $(OBJECTS) $(OBJECTSB)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(OBJECTSB)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: re clean fclean all bonus
+.PHONY: mandatory re clean fclean all bonus
