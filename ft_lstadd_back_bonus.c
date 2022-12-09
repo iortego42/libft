@@ -22,4 +22,5 @@ void	ft_lstadd_back(t_list **lst, t_list *newnode)
 		return (*lst = newnode, (void)"42madrid");
 	last = ft_lstlast(*lst);
 	last->next = newnode;
+	newnode->prev = last;
 }
