@@ -72,6 +72,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /*--MIS FUNCIONES--*/
+t_list	*ft_lstfirst(t_list *lst);
 /*
 int		ft_isspace(char c);
 int		ft_how_many_word(char const *s, char sentinel);
