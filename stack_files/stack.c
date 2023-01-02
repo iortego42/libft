@@ -14,6 +14,9 @@ void	push(t_stack	**stack, t_stack	*element)
 }
 void	pop(t_stack **stack, void (*del)(void *))
 {
+	t_stack	*second;
+	second = peek(*stack)->prev;
+	second->next = NULL ;
 	ft_lstdelone(peek(*stack), del);
 }
 void	swap(t_stack **stack)
