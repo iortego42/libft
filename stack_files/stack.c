@@ -12,12 +12,16 @@ void	push(t_stack	**stack, t_stack	*element)
 {
 	ft_lstadd_back(stack, element);
 }
-void	pop(t_stack **stack, void (*del)(void *))
+t_bool	pop(t_stack **stack, void (*del)(void *))
 {
 	t_stack	*second;
+	
 	second = peek(*stack)->prev;
+	if (second == NULL)
+		return (FALSE);
 	second->next = NULL ;
 	ft_lstdelone(peek(*stack), del);
+	return (TRUE);
 }
 void	swap(t_stack **stack)
 {
