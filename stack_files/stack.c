@@ -2,7 +2,7 @@
 
 t_stack	*new_stack_element(void *content)
 {
-	return ft_lstnew(content);
+	return (ft_lstnew(content));
 }
 t_stack	*peek(t_stack *stack)
 {
@@ -12,16 +12,28 @@ void	push(t_stack	**stack, t_stack	*element)
 {
 	ft_lstadd_back(stack, element);
 }
-t_bool	pop(t_stack **stack, void (*del)(void *))
+t_bool	pop(t_stack *stack, void (*del)(void *))
 {
 	t_stack	*second;
-	
-	second = peek(*stack)->prev;
+
+	if (stack == NULL || del == NULL)
+		return (FALSE);
+	second = peek(stack)->prev;
 	if (second == NULL)
 		return (FALSE);
-	second->next = NULL ;
-	ft_lstdelone(peek(*stack), del);
+	second->next = NULL;
+	ft_lstdelone(peek(stack), del);
 	return (TRUE);
+}
+void	delete_stack(t_stack **stack, void (*del)(void *))
+{
+	t_bool deleted;
+	
+	if (stack == NULL || *stack == NULL || del == NULL)
+		return ((void)"42 Madrid");
+	deleted = TRUE;
+	while (deleted == TRUE)
+		deleted = pop(*stack, *del);
 }
 void	swap(t_stack **stack)
 {
