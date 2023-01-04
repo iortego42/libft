@@ -4,27 +4,33 @@ t_stack	*new_stack_element(void *content)
 {
 	return (ft_lstnew(content));
 }
+
 t_stack	*peek(t_stack *stack)
 {
 	return (ft_lstlast(stack));
 }
+
 void	push(t_stack	**stack, t_stack	*element)
 {
 	ft_lstadd_back(stack, element);
 }
+
 t_bool	pop(t_stack *stack, void (*del)(void *))
 {
+	t_stack	*top;
 	t_stack	*second;
 
 	if (stack == NULL || del == NULL)
 		return (FALSE);
-	second = peek(stack)->prev;
+	top = peek(stack);
+	second = top->prev;
 	if (second == NULL)
 		return (FALSE);
 	second->next = NULL;
 	ft_lstdelone(peek(stack), del);
 	return (TRUE);
 }
+
 void	delete_stack(t_stack **stack, void (*del)(void *))
 {
 	t_bool deleted;
@@ -35,6 +41,7 @@ void	delete_stack(t_stack **stack, void (*del)(void *))
 	while (deleted == TRUE)
 		deleted = pop(*stack, *del);
 }
+
 void	swap(t_stack **stack)
 {
 	t_stack	*top;
@@ -43,14 +50,14 @@ void	swap(t_stack **stack)
 	top = peek(*stack);
 	if (top != NULL && top->prev != NULL)
 	{
-		second = top->prev;
-			
+		second = top->prev;	
 		second->next = top->next;
 		top->prev = second->prev;
 		top->next = second;
 		second->prev = top;
 	}
 }
+
 void	rotate(t_stack **stack)
 {
 	t_stack *last;
@@ -62,6 +69,7 @@ void	rotate(t_stack **stack)
 	last = last->next;
 	last->prev = NULL;
 }
+
 void	rev_rot(t_stack **stack)
 {
 	t_stack	*first, *second;
