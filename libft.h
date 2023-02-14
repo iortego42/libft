@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2023/01/02 18:05:30 by nachh            ###   ########.fr       */
+/*   Updated: 2023/02/14 14:42:47 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,13 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 /*--MIS FUNCIONES--*/
 t_list	*ft_lstfirst(t_list *lst);
-/*
+
 int		ft_isspace(char c);
+void	ft_switch_values(long long int *a, long long int *b);
+void	ft_switch_mem(long long int *a, long long int *b);
 int		ft_how_many_word(char const *s, char sentinel);
 int		ft_how_many_char(char const *s, char sentinel);
 void	ft_matrix_delete(void **matrix, int dimension);
 void	ft_matrix_free(void **matrix, int dimension);
-*/
+
 #endif
