@@ -6,13 +6,15 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2023/02/14 14:42:47 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/02/17 12:22:18 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # define UC unsigned char
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648 
 
 # include <stdlib.h>
 # include <unistd.h>
