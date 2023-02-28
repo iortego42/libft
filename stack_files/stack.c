@@ -83,3 +83,8 @@ void	rev_rot(t_stack **stack)
 	first->prev = NULL;
 	first->next = *stack;
 }
+
+int	stack_size(t_stack *stack)
+{
+	return (ft_lstsize(stack));
+}

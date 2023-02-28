@@ -13,6 +13,7 @@ void	rev_rot(t_stack **stack);
 t_bool	pop(t_stack **stack, void (*del)(void *));
 t_stack	*peek(t_stack *stack);
 void	delete_stack(t_stack **stack, void (*del)(void *));
+int		stack_size(t_stack	*stack);
 
 #endif
 
