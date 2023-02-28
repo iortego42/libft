@@ -10,6 +10,11 @@ void	push(t_stack	**stack, t_stack	*element)
 	ft_lstadd_front(stack, element);
 }
 
+t_stack *peek(t_stack	*stack)
+{
+	return (ft_lstfirst(stack));
+}
+
 t_bool	pop(t_stack **stack, void (*del)(void *))
 {
 	t_stack	*top;

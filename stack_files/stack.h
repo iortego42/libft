@@ -11,6 +11,7 @@ void	swap(t_stack **stack);
 void	rotate(t_stack **stack);
 void	rev_rot(t_stack **stack);
 t_bool	pop(t_stack **stack, void (*del)(void *));
+t_stack	*peek(t_stack *stack);
 void	delete_stack(t_stack **stack, void (*del)(void *));
 
 #endif
