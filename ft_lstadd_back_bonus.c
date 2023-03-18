@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iortego- <iortego-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:48:22 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/06 11:02:33 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/03/18 20:18:48 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	ft_lstadd_back(t_list **lst, t_list *newnode)
 	last = ft_lstlast(*lst);
 	last->next = newnode;
 	newnode->prev = last;
+	newnode->next = NULL;
 }

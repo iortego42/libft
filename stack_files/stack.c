@@ -7,7 +7,7 @@ t_stack	*new_stack_element(void *content)
 
 void	push(t_stack	**stack, t_stack	*element)
 {
-	ft_lstadd_front(stack, element);
+	ft_lstadd_back(stack, element);
 }
 
 t_stack *peek(t_stack	*stack)
@@ -61,27 +61,24 @@ void	swap(t_stack **stack)
 
 void	rotate(t_stack **stack)
 {
-	t_stack *last;
-
-	while ((*stack)->prev != NULL)
-		*stack = (*stack)->prev;
-	last = *stack;
-	push(stack, last);
-	last = last->next;
-	last->prev = NULL;
+	t_stack	*top, *topprev;
+	
+	top = peek(*stack);
+	topprev = top->prev;
+	topprev->next = NULL; 
+	ft_lstadd_front(stack, top);
 }
 
 void	rev_rot(t_stack **stack)
 {
 	t_stack	*first, *second;
-
+	
 	first = *stack;
-	while ((*stack)->prev != NULL)
-		*stack = (*stack)->prev;
-	second = first->prev;
-	second->next = NULL;
-	first->prev = NULL;
-	first->next = *stack;
+	while (first->prev != NULL)
+		first = first->prev;
+	second = first->next;
+	second->prev = NULL;
+	ft_lstadd_back(stack, first);
 }
 
 int	stack_size(t_stack *stack)
