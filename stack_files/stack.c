@@ -12,7 +12,7 @@ void	push(t_stack	**stack, t_stack	*element)
 
 t_stack *peek(t_stack	*stack)
 {
-	return (ft_lstfirst(stack));
+	return (ft_lstlast(stack));
 }
 
 t_bool	pop(t_stack **stack, void (*del)(void *))
