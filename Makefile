@@ -2,11 +2,12 @@ NAME= libft.a
 
 CC= clang
 AR= ar
+ARFLAGS= -rc
 OBJDIR= build
 SRCDIR= src
+HEADERPATH= include
 
-
-CFLAGS= -Wall -Wextra -Werror -std=c89
+CFLAGS= -Wall -Wextra -Werror -I include
 
 SRCS=	\
 		ft_atoi.c \
@@ -58,13 +59,13 @@ OBJECTS:= $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJECTS)
-	$(AR) -rc $(NAME) $(OBJECTS)
+$(NAME): $(OBJECTS) | $(OBJDIR)
+	$(AR) $(ARFLAGS) $@ $^
 
 $(OBJDIR): 
-	mkdir build
+	mkdir $@
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@ 
 
 clean:
