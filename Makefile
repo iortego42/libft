@@ -58,14 +58,17 @@ OBJECTS:= $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJDIR) $(OBJECTS)
 	$(AR) -rc $(NAME) $(OBJECTS)
+
+$(OBJDIR): 
+	mkdir build
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ 
 
 clean:
-	rm -f $(OBJECTS)
+	rm -rf $(OBJDIR)
 
 fclean: clean
 	rm -f $(NAME)
