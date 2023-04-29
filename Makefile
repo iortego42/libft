@@ -1,17 +1,17 @@
 NAME= libft.a
 
-CC= gcc
-AR= ar
-ARFLAGS= -rc
-RM= rm -rf 
-OBJDIR= build
-SRCDIR= src
-INCDIR= include
+CC = gcc
+AR = ar
+ARFLAGS = -rc
+RM = rm -rf 
+OBJDIR = build
+SRCDIR = src
+INCDIR = include
 
 
-CFLAGS= -Wall -Wextra -Werror -I $(INCDIR)
+CFLAGS = -Wall -Wextra -Werror -I $(INCDIR)
 
-SRCS=	\
+SRCS =	\
 		ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -57,11 +57,11 @@ SRCS=	\
 		ft_lstsize_bonus.c
 
 
-OBJS:= $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
+OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJS) | $(OBJDIR)
+$(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(OBJDIR): 
