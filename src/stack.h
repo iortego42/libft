@@ -1,7 +1,7 @@
 #ifndef STACKFT_H
 # define STACKFT_H
 
-# include "../libft.h"
+# include "libft.h"
 
 typedef t_list t_stack;
 

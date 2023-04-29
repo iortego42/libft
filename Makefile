@@ -2,72 +2,67 @@ NAME= libft.a
 
 CC= clang
 AR= ar
-OBJ_DIR= build/
-SRC_DIR= src/
-STACK_DIR= src/stack/
+OBJDIR= build
+SRCDIR= src
 
 
 CFLAGS= -Wall -Wextra -Werror -std=c89
 
-SRCS=	$(SRC_DIR)/ft_atoi.c \
-		$(SRC_DIR)/ft_bzero.c \
-		$(SRC_DIR)/ft_calloc.c \
-		$(SRC_DIR)/ft_isalnum.c \
-		$(SRC_DIR)/ft_isalpha.c \
-		$(SRC_DIR)/ft_isascii.c \
-		$(SRC_DIR)/ft_isdigit.c \
-		$(SRC_DIR)/ft_isprint.c \
-		$(SRC_DIR)/ft_itoa.c \
-		$(SRC_DIR)/ft_memchr.c \
-		$(SRC_DIR)/ft_memcmp.c \
-		$(SRC_DIR)/ft_memcpy.c \
-		$(SRC_DIR)/ft_memmove.c \
-		$(SRC_DIR)/ft_memset.c \
-		$(SRC_DIR)/ft_putchar_fd.c \
-		$(SRC_DIR)/ft_putendl_fd.c \
-		$(SRC_DIR)/ft_putnbr_fd.c \
-		$(SRC_DIR)/ft_putstr_fd.c \
-		$(SRC_DIR)/ft_split.c \
-		$(SRC_DIR)/ft_strchr.c \
-		$(SRC_DIR)/ft_strdup.c \
-		$(SRC_DIR)/ft_striteri.c \
-		$(SRC_DIR)/ft_strjoin.c \
-		$(SRC_DIR)/ft_strlcat.c \
-		$(SRC_DIR)/ft_strlcpy.c \
-		$(SRC_DIR)/ft_strlen.c \
-		$(SRC_DIR)/ft_strmapi.c \
-		$(SRC_DIR)/ft_strncmp.c \
-		$(SRC_DIR)/ft_strnstr.c \
-		$(SRC_DIR)/ft_strrchr.c \
-		$(SRC_DIR)/ft_strtrim.c \
-		$(SRC_DIR)/ft_substr.c \
-		$(SRC_DIR)/ft_tolower.c \
-		$(SRC_DIR)/ft_toupper.c
-		$(SRC_DIR)/ft_lstadd_back_bonus.c \
-		$(SRC_DIR)/ft_lstadd_front_bonus.c \
-		$(SRC_DIR)/ft_lstclear_bonus.c \
-		$(SRC_DIR)/ft_lstdelone_bonus.c \
-		$(SRC_DIR)/ft_lstiter_bonus.c \
-		$(SRC_DIR)/ft_lstlast_bonus.c \
-		$(SRC_DIR)/ft_lstmap_bonus.c \
-		$(SRC_DIR)/ft_lstnew_bonus.c \
-		$(SRC_DIR)/ft_lstsize_bonus.c
+SRCS=	\
+		ft_atoi.c \
+		ft_bzero.c \
+		ft_calloc.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_isprint.c \
+		ft_itoa.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_memset.c \
+		ft_putchar_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_putstr_fd.c \
+		ft_split.c \
+		ft_strchr.c \
+		ft_strdup.c \
+		ft_striteri.c \
+		ft_strjoin.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_strlen.c \
+		ft_strmapi.c \
+		ft_strncmp.c \
+		ft_strnstr.c \
+		ft_strrchr.c \
+		ft_strtrim.c \
+		ft_substr.c \
+		ft_tolower.c \
+		ft_toupper.c \
+		ft_lstadd_back_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstmap_bonus.c \
+		ft_lstnew_bonus.c \
+		ft_lstsize_bonus.c
 
-SRCSTACK= $(SRC_DIR)/  
 
-SRC_NAME= $(SRCS) $(SRCSTACK)
-
-OBJECTS = $(SRC_NAME:.c=.o)
+OBJECTS:= $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
-
-normal: 
-	make "OBJECTS=$(OBJECTSTACK)"
 
 $(NAME): $(OBJECTS)
 	$(AR) -rc $(NAME) $(OBJECTS)
 
-$(BUILD_DIR):
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 clean:
 	rm -f $(OBJECTS)
@@ -77,4 +72,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: normal re clean fclean all
+.PHONY:  re clean fclean all

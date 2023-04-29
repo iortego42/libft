@@ -6,13 +6,13 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 11:49:43 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/04 18:51:25 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/04/29 13:33:27 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_how_many_char(char const *s, char sentinel)
+/*static int	ft_how_many_char(char const *s, char sentinel)
 {
 	int	count;
 
@@ -54,7 +54,7 @@ static void	ft_matrix_delete(void **matrix, int dimension)
 {
 	ft_matrix_free(matrix, dimension);
 	matrix = NULL;
-}
+}*/
 
 char	**ft_split(char const *s, char c)
 {
