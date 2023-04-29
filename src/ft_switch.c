@@ -6,14 +6,14 @@ void	ft_switch_mem(long long *a, long long *b)
 
 	aux = a;
 	a = b;
-	b = a;
+	b = aux;
 }
 
 void	ft_switch_values(long long *a, long long *b)
 {
-	long long *aux;
-
-	*aux = *a;
+	long long aux;
+	
+	aux = *a;
 	*a = *b;
-	*b = *aux;
+	*b = aux;
 }
