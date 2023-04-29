@@ -55,11 +55,11 @@ SRCS=	\
 		ft_lstsize_bonus.c
 
 
-OBJECTS:= $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
+OBJS:= $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) | $(OBJDIR)
+$(NAME): $(OBJS) | $(OBJDIR)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(OBJDIR): 
@@ -76,4 +76,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:  re clean fclean all
+.PHONY: re clean fclean all
