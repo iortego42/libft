@@ -5,9 +5,9 @@ AR= ar
 ARFLAGS= -rc
 OBJDIR= build
 SRCDIR= src
-HEADERPATH= include
+INCDIR= include
 
-CFLAGS= -Wall -Wextra -Werror -I include
+CFLAGS= -Wall -Wextra -Werror -I $(INCDIR)
 
 SRCS=	\
 		ft_atoi.c \
