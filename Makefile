@@ -1,6 +1,6 @@
 NAME= libft.a
 
-CC= clang
+CC= gcc
 AR= ar
 ARFLAGS= -rc
 RM= rm
