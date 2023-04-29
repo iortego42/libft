@@ -3,7 +3,7 @@ NAME= libft.a
 CC= gcc
 AR= ar
 ARFLAGS= -rc
-RM= rm
+RM= rm -rf 
 OBJDIR= build
 SRCDIR= src
 INCDIR= include
@@ -71,10 +71,10 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@ 
 
 clean:
-	$(RM) -rf $(OBJDIR)
+	$(RM) $(OBJDIR)
 
 fclean: clean
-	$(RM) -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
