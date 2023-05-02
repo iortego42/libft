@@ -9,7 +9,8 @@ SRCDIR = src
 INCDIR = include
 
 
-CFLAGS = -Wall -Wextra -Werror -I $(INCDIR)
+# CFLAGS = -Wall -Wextra -Werror  -I $(INCDIR) -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror  -I $(INCDIR)
 
 SRCS =	\
 		ft_atoi.c \
@@ -69,6 +70,16 @@ OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
 
+sanitize: CFLAGS += -fsanitize=address 
+sanitize: $(OBJS) $(LFT) 
+	@echo "[libFT]->>\033[34m [◊] SANITIZE MODE ON [◊]\033[0m"
+	$(AR) $(ARFLAGS) $(NAME) $^
+	
+debug: CFLAGS += -g3
+debug: $(OBJS) $(LFT) 
+	@echo "[libFT]->> \033[33m [∆] DEBUG MODE ON [∆]\033[0m"
+	$(AR) $(ARFLAGS) $(NAME) $^
+
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
@@ -86,4 +97,8 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re clean fclean all
+red: fclean debug
+
+res: fclean sanitize
+
+.PHONY: sanitize debug res red re clean fclean all

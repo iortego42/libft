@@ -22,13 +22,12 @@ t_bool	pop(t_stack **stack, void (*del)(void *))
 
 	if (stack == NULL || *stack == NULL || del == NULL)
 		return (FALSE);
-	top = *stack;
+	top = peek(*stack);
 	second = top->prev;
 	if (second == NULL)
 		return (FALSE);
 	second->next = NULL;
-	ft_lstdelone(*stack, del);
-	*stack = second;
+	ft_lstdelone(top, del);
 	return (TRUE);
 }
 
@@ -64,6 +63,8 @@ void	rotate(t_stack **stack)
 	t_stack	*top, *topprev;
 	
 	top = peek(*stack);
+	if (top->prev == NULL)
+		return ((void)"42Madrid");
 	topprev = top->prev;
 	topprev->next = NULL; 
 	ft_lstadd_front(stack, top);
@@ -77,6 +78,8 @@ void	rev_rot(t_stack **stack)
 	while (first->prev != NULL)
 		first = first->prev;
 	second = first->next;
+	if (first->next == NULL)
+		return ((void)"42Madrid");	
 	second->prev = NULL;
 	ft_lstadd_back(stack, first);
 }

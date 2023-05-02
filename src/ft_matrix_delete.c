@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 16:29:19 by iortego-          #+#    #+#             */
-/*   Updated: 2022/07/03 17:46:22 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/04/30 13:23:21 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,19 @@ void	ft_matrix_delete(void **matrix, int dimension)
 
 void	ft_matrix_free(void **matrix, int dimension)
 {
-	int	free_count;
+	int	index;
 
-	free_count = 0;
-	while (dimension-- > 0)
-	{	
-		while (*(matrix + free_count) != NULL && dimension > 0)
-			ft_matrix_free(*(matrix + free_count++), dimension);
-		free_count = 0;
-		while (matrix + free_count != NULL)
-			free(matrix + free_count++);
+	index = 0;
+	while (matrix != NULL)
+	{
+		if (dimension > 1)
+			ft_matrix_free((void **) *matrix, dimension--);
+		while (matrix[index] != NULL)
+		{
+			free(matrix[index]);
+			matrix[index] = NULL;
+			index++;
+		}
+		matrix++;
 	}
 }
