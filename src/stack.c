@@ -25,7 +25,10 @@ t_bool	pop(t_stack **stack, void (*del)(void *))
 	top = peek(*stack);
 	second = top->prev;
 	if (second == NULL)
-		return (FALSE);
+	{
+		ft_lstdelone(top, del);
+		return (TRUE);
+	}
 	second->next = NULL;
 	ft_lstdelone(top, del);
 	return (TRUE);
@@ -39,7 +42,7 @@ void	delete_stack(t_stack **stack, void (*del)(void *))
 		return ((void)"42 Madrid");
 	deleted = TRUE;
 	while (deleted == TRUE)
-		deleted = pop(stack, *del);
+		deleted = pop(stack, del);
 }
 
 void	swap(t_stack **stack)

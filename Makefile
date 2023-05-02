@@ -70,7 +70,7 @@ OBJS := $(addprefix $(OBJDIR)/,$(SRCS:%.c=%.o))
 
 all: $(NAME)
 
-sanitize: CFLAGS += -fsanitize=address 
+sanitize: CFLAGS += -fsanitize=address -g3 
 sanitize: $(OBJS) $(LFT) 
 	@echo "[libFT]->>\033[34m [◊] SANITIZE MODE ON [◊]\033[0m"
 	$(AR) $(ARFLAGS) $(NAME) $^
