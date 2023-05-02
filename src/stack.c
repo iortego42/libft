@@ -18,19 +18,16 @@ t_stack *peek(t_stack	*stack)
 t_bool	pop(t_stack **stack, void (*del)(void *))
 {
 	t_stack	*top;
-	t_stack	*second;
+	t_stack	*topprev;
 
-	if (stack == NULL || *stack == NULL || del == NULL)
+	if (stack == NULL || *stack == NULL)
 		return (FALSE);
 	top = peek(*stack);
-	second = top->prev;
-	if (second == NULL)
-	{
+	topprev = top->prev;
+	if (topprev != NULL)
+		topprev->next = NULL;
+	if (del != NULL)
 		ft_lstdelone(top, del);
-		return (TRUE);
-	}
-	second->next = NULL;
-	ft_lstdelone(top, del);
 	return (TRUE);
 }
 
@@ -48,16 +45,16 @@ void	delete_stack(t_stack **stack, void (*del)(void *))
 void	swap(t_stack **stack)
 {
 	t_stack	*top;
-	t_stack	*second;
+	t_stack	*topprev;
 
 	top = peek(*stack);
 	if (top != NULL && top->prev != NULL)
 	{
-		second = top->prev;	
-		second->next = top->next;
-		top->prev = second->prev;
-		top->next = second;
-		second->prev = top;
+		topprev = top->prev;	
+		topprev->next = top->next;
+		top->prev = topprev->prev;
+		top->next = topprev;
+		topprev->prev = top;
 	}
 }
 
@@ -75,15 +72,15 @@ void	rotate(t_stack **stack)
 
 void	rev_rot(t_stack **stack)
 {
-	t_stack	*first, *second;
+	t_stack	*first, *topprev;
 	
 	first = *stack;
 	while (first->prev != NULL)
 		first = first->prev;
-	second = first->next;
+	topprev = first->next;
 	if (first->next == NULL)
 		return ((void)"42Madrid");	
-	second->prev = NULL;
+	topprev->prev = NULL;
 	ft_lstadd_back(stack, first);
 }
 
