@@ -6,7 +6,7 @@
 /*   By: iortego- <iortego-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:48:57 by iortego-          #+#    #+#             */
-/*   Updated: 2023/05/02 15:14:01 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:44:39 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	if (lst == NULL || del == NULL)
 		return;
 	if (lst->content != NULL)
+	{
 		(*del)(lst->content);
+		lst->content = NULL;
+	}
 	free(lst);
 }

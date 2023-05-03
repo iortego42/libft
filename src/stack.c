@@ -1,4 +1,5 @@
 #include "stack.h"
+#include "libft.h"
 
 t_stack	*new_stack_element(void *content)
 {
@@ -19,13 +20,18 @@ t_bool	pop(t_stack **stack, void (*del)(void *))
 {
 	t_stack	*top;
 	t_stack	*topprev;
-
-	if (stack == NULL || *stack == NULL)
+	
+	if (stack == NULL)
 		return (FALSE);
 	top = peek(*stack);
+	if (top == NULL)
+		return (FALSE);
 	topprev = top->prev;
 	if (topprev != NULL)
 		topprev->next = NULL;
+	else 
+		*stack = NULL;
+	top->prev = NULL;
 	if (del != NULL)
 		ft_lstdelone(top, del);
 	return (TRUE);
@@ -72,15 +78,15 @@ void	rotate(t_stack **stack)
 
 void	rev_rot(t_stack **stack)
 {
-	t_stack	*first, *topprev;
+	t_stack	*first, *second;
 	
 	first = *stack;
 	while (first->prev != NULL)
 		first = first->prev;
-	topprev = first->next;
 	if (first->next == NULL)
 		return ((void)"42Madrid");	
-	topprev->prev = NULL;
+	second = first->next;
+	second->prev = NULL;
 	ft_lstadd_back(stack, first);
 }
 
