@@ -69,25 +69,21 @@ void	rotate(t_stack **stack)
 	t_stack	*top, *topprev;
 	
 	top = peek(*stack);
-	if (top->prev == NULL)
-		return ((void)"42Madrid");
+	if (top == NULL || top->prev == NULL )
+		return;
 	topprev = top->prev;
-	topprev->next = NULL; 
-	ft_lstadd_front(stack, top);
+	topprev->next = NULL;
+	top->prev = NULL;
+	top->next = ft_lstfirst(*stack);
 }
 
 void	rev_rot(t_stack **stack)
 {
 	t_stack	*first, *second;
 	
-	first = *stack;
-	while (first->prev != NULL)
-		first = first->prev;
-	if (first->next == NULL)
-		return ((void)"42Madrid");	
-	second = first->next;
-	second->prev = NULL;
-	ft_lstadd_back(stack, first);
+	first = ft_lstfirst(*stack);
+	if ()
+
 }
 
 int	stack_size(t_stack *stack)
