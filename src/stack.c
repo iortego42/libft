@@ -66,24 +66,32 @@ void	swap(t_stack **stack)
 
 void	rotate(t_stack **stack)
 {
-	t_stack	*top, *topprev;
+	t_stack	*top, *topprev, *first;
 	
 	top = peek(*stack);
 	if (top == NULL || top->prev == NULL )
 		return;
 	topprev = top->prev;
 	topprev->next = NULL;
+	first = ft_lstfirst(*stack);
+	first->prev = top;
 	top->prev = NULL;
-	top->next = ft_lstfirst(*stack);
+	top->next = first;
 }
 
 void	rev_rot(t_stack **stack)
 {
-	t_stack	*first, *second;
+	t_stack	*first, *second, *top;
 	
 	first = ft_lstfirst(*stack);
-	if ()
-
+	if (first == NULL || first->next == NULL)
+		return ((void)"42Madrid");
+	second = first->next;
+	top = peek(*stack);
+	second->prev = NULL;
+	top->next = first;
+	first->prev = top;
+	first->next = NULL;
 }
 
 int	stack_size(t_stack *stack)
