@@ -64,7 +64,7 @@ void	swap(t_stack **stack)
 	}
 }
 
-void	rotate(t_stack **stack)
+void	rev_rot(t_stack **stack)
 {
 	t_stack	*top, *topprev, *first;
 	
@@ -77,9 +77,10 @@ void	rotate(t_stack **stack)
 	first->prev = top;
 	top->prev = NULL;
 	top->next = first;
+	*stack = top;
 }
 
-void	rev_rot(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	t_stack	*first, *second, *top;
 	
@@ -92,6 +93,7 @@ void	rev_rot(t_stack **stack)
 	top->next = first;
 	first->prev = top;
 	first->next = NULL;
+	*stack = second;
 }
 
 int	stack_size(t_stack *stack)
