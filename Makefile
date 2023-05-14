@@ -62,7 +62,8 @@ SRCS =	\
 		ft_switch.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		stack.c
+		stack.c \
+		stack2.c
 
 
 

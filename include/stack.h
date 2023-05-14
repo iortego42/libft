@@ -1,9 +1,21 @@
-#ifndef STACKFT_H
-# define STACKFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iortego- <iortego-@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/14 19:17:12 by iortego-          #+#    #+#             */
+/*   Updated: 2023/05/14 19:19:45 by iortego-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef STACK_H
+# define STACK_H
 
 # include "libft.h"
 
-typedef t_list t_stack;
+typedef t_list	t_stack;
 
 t_stack	*new_stack_element(void	*content);
 void	push(t_stack **stack, t_stack *element);
@@ -16,4 +28,3 @@ void	delete_stack(t_stack **stack, void (*del)(void *));
 int		size(t_stack	*stack);
 
 #endif
-

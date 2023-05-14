@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2023/02/17 12:22:18 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/05/14 20:30:42 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef enum {FALSE,TRUE} t_bool;
+typedef enum s_boolean {FALSE,TRUE}	t_bool;
 typedef struct s_list
 {
 	void			*content;
@@ -60,10 +60,10 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-int	ft_putchar_fd(char c, int fd);
-int	ft_putstr_fd(char *s, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-int	ft_putnbr_fd(int a, int fd);
+int		ft_putnbr_fd(int a, int fd);
 /*-----PARTE BONUS-----*/
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *newnode);
@@ -78,6 +78,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstfirst(t_list *lst);
 
 int		ft_isspace(char c);
+void	ft_switch_int_values(int *a, int *b);
 void	ft_switch_values(long long int *a, long long int *b);
 void	ft_switch_mem(long long int *a, long long int *b);
 int		ft_how_many_word(char const *s, char sentinel);
