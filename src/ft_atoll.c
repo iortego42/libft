@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iortego- <iortego-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 20:22:08 by iortego-          #+#    #+#             */
-/*   Updated: 2023/05/15 14:23:30 by iortego-         ###   ########.fr       */
+/*   Created: 2023/05/15 13:32:07 by iortego-          #+#    #+#             */
+/*   Updated: 2023/05/15 14:19:39 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*static int	ft_isspace(char c)
+long long	ft_atoll(const char *c)
 {
-	return ((unsigned)c - 9 < 5 || c == 32);
-}*/
-
-int	ft_atoi(const char *c)
-{
-	long int	ret;
+	long long	ret;
 	int			sing;
 
 	ret = 0;
@@ -31,10 +26,6 @@ int	ft_atoi(const char *c)
 	if (*c == '+' || *c == '-')
 		c++;
 	while (ft_isdigit(*c))
-	{
 		ret = (10 * ret) + *(c++) - '0';
-		if (ret > INT_MAX || ret < INT_MIN)
-			return (0);
-	}
 	return (ret * sing);
 }

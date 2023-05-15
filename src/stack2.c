@@ -6,7 +6,7 @@
 /*   By: iortego- <iortego-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 19:34:19 by iortego-          #+#    #+#             */
-/*   Updated: 2023/05/14 19:41:23 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:42:27 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,25 @@ void	swap(t_stack **stack)
 {
 	t_stack	*top;
 	t_stack	*topprev;
+	t_stack	*third;
 
 	top = peek(*stack);
 	if (top != NULL && top->prev != NULL)
 	{
 		topprev = top->prev;
-		topprev->next = top->next;
-		top->prev = topprev->prev;
+		if (topprev->prev != NULL)
+		{
+			third = topprev->prev;
+			third->next = top;
+		}
+		topprev->next = NULL;
 		top->next = topprev;
+		top->prev = topprev->prev;
 		topprev->prev = top;
 	}
 }
 
-void	rev_rot(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	t_stack	*top;
 	t_stack	*topprev;
@@ -46,7 +52,7 @@ void	rev_rot(t_stack **stack)
 	*stack = top;
 }
 
-void	rotate(t_stack **stack)
+void	rev_rot(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
