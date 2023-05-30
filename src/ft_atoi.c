@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:22:08 by iortego-          #+#    #+#             */
-/*   Updated: 2023/05/15 14:23:30 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/05/27 15:54:26 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *c)
 	while (ft_isdigit(*c))
 	{
 		ret = (10 * ret) + *(c++) - '0';
-		if (ret > INT_MAX || ret < INT_MIN)
+		if (sing * ret > INT_MAX || sing * ret < INT_MIN)
 			return (0);
 	}
 	return (ret * sing);

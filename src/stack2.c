@@ -6,7 +6,7 @@
 /*   By: iortego- <iortego-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 19:34:19 by iortego-          #+#    #+#             */
-/*   Updated: 2023/05/15 12:42:27 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:02:58 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	swap(t_stack **stack)
 		top->prev = topprev->prev;
 		topprev->prev = top;
 	}
+	if (top->prev == NULL)
+		*stack = top;
 }
 
 void	rotate(t_stack **stack)
