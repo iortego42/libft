@@ -63,7 +63,9 @@ SRCS =	\
 		ft_tolower.c \
 		ft_toupper.c \
 		stack.c \
-		stack2.c
+		stack2.c \
+		get_next_line_utils.c \
+		get_next_line.c
 
 
 

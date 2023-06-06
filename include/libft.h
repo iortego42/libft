@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2023/05/15 13:37:06 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/06/06 18:39:20 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef enum s_boolean {FALSE,TRUE}	t_bool;
 typedef struct s_list
