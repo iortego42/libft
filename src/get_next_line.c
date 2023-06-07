@@ -6,11 +6,27 @@
 /*   By: iortego- <iortego-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:29:56 by iortego-          #+#    #+#             */
-/*   Updated: 2022/11/02 12:30:54 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/06/07 18:16:30 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+
+static	int	ft_strncpy(char *dst, char *src, size_t size)
+{
+	size_t	count;
+
+	count = 0;
+	while (src[count] != 0 && size > count + 1)
+	{
+		dst[count] = src[count];
+		count++;
+	}
+	if (size != 0)
+		dst[count] = 0;
+	return (count);
+}
 
 int	charge_buffer(t_buffer *buffer, int fd)
 {

@@ -64,6 +64,7 @@ SRCS =	\
 		ft_toupper.c \
 		stack.c \
 		stack2.c \
+		realloc.c \
 		get_next_line_utils.c \
 		get_next_line.c
 

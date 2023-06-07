@@ -6,7 +6,7 @@
 /*   By: iortego- <iortego-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:32:31 by iortego-          #+#    #+#             */
-/*   Updated: 2023/06/06 18:39:37 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/06/06 19:26:38 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define CPLENGHT_INIT 42
 # include "libft.h"
+
 typedef struct s_buffer
 {
 	char	array[BUFFER_SIZE + 1];
