@@ -6,7 +6,7 @@
 /*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:47:37 by iortego-          #+#    #+#             */
-/*   Updated: 2023/06/07 20:06:53 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:02:47 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int			ft_how_many_word(char const *s, char sentinel);
 int			ft_how_many_char(char const *s, char sentinel);
 void		ft_matrix_delete(void **matrix, int dimension);
 void		ft_matrix_free(void **matrix, int dimension);
-void		*realloc(void	*ptr, size_t size);
+void		*ft_realloc(void	*ptr, size_t newsize, size_t size);
 t_bool		extension(const	char *str, const char *ext);
 
 #endif

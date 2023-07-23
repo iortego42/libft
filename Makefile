@@ -66,7 +66,8 @@ SRCS =	\
 		stack2.c \
 		realloc.c \
 		get_next_line_utils.c \
-		get_next_line.c
+		get_next_line.c \
+		path.c
 
 
 
