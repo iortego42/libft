@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iortego- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iortego- <iortego-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 11:49:43 by iortego-          #+#    #+#             */
-/*   Updated: 2023/04/29 13:33:27 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:55:33 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	**ft_split(char const *s, char c)
 		list[n] = (char *)ft_calloc(ft_how_many_char(s, c) + 1, sizeof(char));
 		if (list[n] == NULL)
 		{
-			ft_matrix_delete((void **)list, 2);
+			ft_matrix_delete((void ***)&list, 2);
 			return (NULL);
 		}
 		ft_strlcpy(list[n], s, ft_how_many_char(s, c) + 1);
