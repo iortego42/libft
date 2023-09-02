@@ -6,7 +6,7 @@
 /*   By: iortego- <iortego-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:59:15 by iortego-          #+#    #+#             */
-/*   Updated: 2023/08/13 18:56:22 by iortego-         ###   ########.fr       */
+/*   Updated: 2023/09/02 13:01:25 by iortego-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char	**ft_matrixcpy(char **m)
 		return (NULL);
 	while (index-- > 0)
 		copy[index] = NULL;
+	index++;
 	while (m[index] != NULL)
 	{
 		copy[index] = ft_strdup(m[index]);
